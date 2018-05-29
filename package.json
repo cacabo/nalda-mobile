@@ -20,6 +20,8 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "es6-promise": "^4.2.4",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
