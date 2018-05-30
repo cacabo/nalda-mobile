@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
-import appStyles from '../../styles/appStyles';
+import styles from '../../styles/shared/error';
 
 const ErrorMessage = ({ error }) => {
   if (error) {
     return (
-      <View style={appStyles.error}>
+      <View style={styles.error}>
         <Text>{error}</Text>
       </View>
     );

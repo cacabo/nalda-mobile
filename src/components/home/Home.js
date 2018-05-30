@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import axios from 'axios';
+
+// Import routes
 import { homePath } from '../../api';
+
+// Import styles
+import styles from '../../styles/app';
+
+// Import components
 import Error from '../shared/Error';
-import appStyles from '../../styles/appStyles';
 import HomeComponents from './HomeComponents';
 
 export default class Home extends Component {
@@ -43,14 +49,14 @@ export default class Home extends Component {
   render() {
     if (this.state.loading) {
       return (
-        <View style={appStyles.container}>
+        <View style={styles.container}>
           <Text>Loading...</Text>
         </View>
       );
     }
 
     return (
-      <View style={appStyles.container}>
+      <View style={styles.container}>
         <HomeComponents components={this.state.components} />
         <Error error={this.state.error} />
       </View>

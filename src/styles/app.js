@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { white, red } from './colors';
+import { white } from './colors';
 
 export default StyleSheet.create({
   app: {
@@ -10,10 +10,5 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: white,
     padding: 12,
-  },
-  error: {
-    backgroundColor: red,
-    padding: 12,
-    color: white,
   },
 });
