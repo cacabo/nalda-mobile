@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import axios from 'axios';
 import { homePath } from '../../api';
 import Error from '../shared/Error';
+import styles from '../../styles/index';
 
 export default class Home extends Component {
   constructor(props) {
@@ -36,14 +37,14 @@ export default class Home extends Component {
   render() {
     if (this.state.loading) {
       return (
-        <View>
+        <View style={styles.container}>
           <Text>Loading...</Text>
         </View>
       );
     }
 
     return (
-      <View>
+      <View style={styles.container}>
         <Text>This is the homepage</Text>
         <Error error={this.state.error} />
       </View>

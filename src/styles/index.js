@@ -1,5 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { white, lightGray } from './colors';
+import {
+  white,
+  lightGray,
+  red,
+} from './colors';
 
 export default StyleSheet.create({
   app: {
@@ -13,18 +17,20 @@ export default StyleSheet.create({
   },
   nav: {
     paddingTop: 24,
-    paddingLeft: 12,
-    paddingRight: 12,
-    paddingBottom: 8,
+    paddingBottom: 12,
     backgroundColor: white,
     borderBottomColor: lightGray,
     borderBottomWidth: 1,
   },
   logo: {
-    width: 40,
-    height: 40,
+    width: 38,
+    height: 38,
+    paddingTop: 12,
+    paddingBottom: 12,
   },
   error: {
-    // TODO
+    backgroundColor: red,
+    padding: 12,
+    color: white,
   },
 });
