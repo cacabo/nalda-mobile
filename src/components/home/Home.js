@@ -3,14 +3,15 @@ import { View, Text } from 'react-native';
 import axios from 'axios';
 import { homePath } from '../../api';
 import Error from '../shared/Error';
-import styles from '../../styles/index';
+import appStyles from '../../styles/appStyles';
+import HomeComponents from './HomeComponents';
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true,
-      banner: {},
+      // banner: {},
       components: {},
     };
   }
@@ -21,7 +22,7 @@ export default class Home extends Component {
         if (res.data.success) {
           this.setState({
             loading: false,
-            banner: res.data.banner,
+            // banner: res.data.banner,
             components: res.data.components,
           });
         } else {
@@ -31,21 +32,26 @@ export default class Home extends Component {
           });
         }
       })
-      .catch(err => console.log(err));
+      .catch((err) => {
+        this.setState({
+          loading: false,
+          error: err.message,
+        });
+      });
   }
 
   render() {
     if (this.state.loading) {
       return (
-        <View style={styles.container}>
+        <View style={appStyles.container}>
           <Text>Loading...</Text>
         </View>
       );
     }
 
     return (
-      <View style={styles.container}>
-        <Text>This is the homepage</Text>
+      <View style={appStyles.container}>
+        <HomeComponents components={this.state.components} />
         <Error error={this.state.error} />
       </View>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import { Image } from 'react-native';
 import Home from './home/Home';
-import styles from '../styles/index';
+import navigationStyles from '../styles/navigationStyles';
 
 const logo = require('../images/logo_blue.png');
 
@@ -13,11 +13,11 @@ export default () => {
       navigationOptions: () => ({
         headerTitle: (
           <Image
-            style={styles.logo}
+            style={navigationStyles.logo}
             source={logo}
           />
         ),
-        headerStyle: styles.nav,
+        headerStyle: navigationStyles.nav,
       }),
     },
   });

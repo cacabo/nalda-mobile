@@ -2,13 +2,13 @@ import React from 'react';
 import { View } from 'react-native';
 
 // Import styles
-import styles from './src/styles/index';
+import appStyles from './src/styles/appStyles';
 
 // Import components
 import Navigation from './src/components/Navigation';
 
 export default () => (
-  <View style={styles.app}>
+  <View style={appStyles.app}>
     <Navigation />
   </View>
 );
