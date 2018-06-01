@@ -1,6 +1,21 @@
 import React from 'react';
-import { View } from 'react-native';
+import PropTypes from 'prop-types';
+import Preview from './Preview';
 
-export default () => (
-  <View>Lit</View>
+const Previews = ({ content, id }) => (
+  content.map((c, index) => (
+    <Preview content={c} key={`${id}-${c.contentId}-${index}`} />
+  ))
 );
+
+Previews.defaultProps = {
+  content: [],
+  id: '',
+};
+
+Previews.propTypes = {
+  id: PropTypes.string,
+  content: PropTypes.array,
+};
+
+export default Previews;

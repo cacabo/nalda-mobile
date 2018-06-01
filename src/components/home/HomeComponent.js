@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from '../../styles/home/homeComponent';
+import Previews from '../previews/Previews';
 
 const HomeComponent = ({ component }) => (
   <View>
@@ -11,6 +12,7 @@ const HomeComponent = ({ component }) => (
     <Text style={styles.subtitle}>
       { component.subtitle }
     </Text>
+    <Previews content={component.content} id={component._id} />
   </View>
 );
 

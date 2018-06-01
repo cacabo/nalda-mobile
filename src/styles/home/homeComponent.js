@@ -8,5 +8,6 @@ export default StyleSheet.create({
   },
   subtitle: {
     fontSize: medium,
+    marginBottom: 16,
   },
 });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import axios from 'axios';
 
 // Import routes
@@ -56,10 +56,12 @@ export default class Home extends Component {
     }
 
     return (
-      <View style={styles.container}>
-        <HomeComponents components={this.state.components} />
-        <Error error={this.state.error} />
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <HomeComponents components={this.state.components} />
+          <Error error={this.state.error} />
+        </View>
+      </ScrollView>
     );
   }
 }
