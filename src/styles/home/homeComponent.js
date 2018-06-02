@@ -10,4 +10,7 @@ export default StyleSheet.create({
     fontSize: medium,
     marginBottom: 16,
   },
+  container: {
+    marginBottom: 32,
+  },
 });

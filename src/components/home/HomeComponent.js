@@ -5,7 +5,7 @@ import styles from '../../styles/home/homeComponent';
 import Previews from '../previews/Previews';
 
 const HomeComponent = ({ component }) => (
-  <View>
+  <View style={styles.container}>
     <Text style={styles.title}>
       { component.title }
     </Text>
