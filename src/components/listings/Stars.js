@@ -44,7 +44,7 @@ const Stars = ({ rating }) => {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
       {stars}
     </View>
   );

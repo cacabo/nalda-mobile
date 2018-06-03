@@ -2,7 +2,10 @@ import React from 'react';
 import { View, Image, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from '../../styles/previews/preview';
+
+// Import components
 import Stars from '../listings/Stars';
+import Categories from '../listings/Categories';
 
 const PreviewListing = ({ listing }) => {
   if (!listing) return null;
@@ -13,10 +16,11 @@ const PreviewListing = ({ listing }) => {
         resizeMode="cover"
         style={styles.image}
       />
-      <Stars rating={listing.rating} />
       <Text style={styles.title}>
         {listing.title}
       </Text>
+      <Stars rating={listing.rating} />
+      <Categories categories={listing.categories} />
       <Text style={styles.subtitle}>
         {listing.description}
       </Text>
@@ -24,12 +28,8 @@ const PreviewListing = ({ listing }) => {
   );
 };
 
-PreviewListing.defaultProps = {
-  listing: {},
-};
-
 PreviewListing.propTypes = {
-  listing: PropTypes.object,
+  listing: PropTypes.object.isRequired,
 };
 
 export default PreviewListing;

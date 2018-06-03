@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
 import { darkGray } from '../colors';
-import { small, medium } from '../fontSizes';
+import { large, medium } from '../fontSizes';
 
 export default StyleSheet.create({
   preview: {
-    marginBottom: 16,
+    marginBottom: 24,
   },
   image: {
     marginBottom: 8,
@@ -14,10 +14,11 @@ export default StyleSheet.create({
   },
   title: {
     fontWeight: 'bold',
-    fontSize: medium,
+    fontSize: large,
+    marginBottom: 8,
   },
   subtitle: {
     color: darkGray,
-    fontSize: small,
+    fontSize: medium,
   },
 });

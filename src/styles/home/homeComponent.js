@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { large, medium } from '../fontSizes';
+import { largest, medium } from '../fontSizes';
 
 export default StyleSheet.create({
   title: {
-    fontSize: large,
+    fontSize: largest,
     fontWeight: 'bold',
   },
   subtitle: {
