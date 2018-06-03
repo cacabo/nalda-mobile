@@ -11,29 +11,41 @@ const full = require('../../images/stars/full.png');
 const Stars = ({ rating }) => {
   const numFull = parseInt(rating, 10);
   const numHalf = parseInt(rating + 0.5, 10) - numFull;
-  const numEmpty = 5 - numFull - numHalf;
-
-  const renderStars = (count, image) => {
-    let i;
-    const stars = [];
-    for (i = 0; i < count; i += 1) {
-      const star = (
+  const stars = [];
+  let i;
+  for (i = 0; i < 5; i += 1) {
+    let image;
+    if (i < numFull) {
+      image = (
         <Image
-          source={image}
+          source={full}
           style={styles.star}
           key={i}
         />
       );
-      stars.push(star);
+    } else if (i < numFull + numHalf) {
+      image = (
+        <Image
+          source={half}
+          style={styles.star}
+          key={i}
+        />
+      );
+    } else {
+      image = (
+        <Image
+          source={empty}
+          style={styles.star}
+          key={i}
+        />
+      );
     }
-    return stars;
-  };
+    stars.push(image);
+  }
 
   return (
     <View>
-      {renderStars(full, numFull)}
-      {renderStars(half, numHalf)}
-      {renderStars(empty, numEmpty)}
+      {stars}
     </View>
   );
 };
