@@ -5,6 +5,7 @@ import styles from '../../styles/listings/categories';
 import categoryMap from './categoryMap';
 
 const Categories = ({ categories }) => {
+  // Render a category only if it is 'true' in the map
   const elements = [];
   Object.keys(categories).forEach((key) => {
     if (categories[key]) {
@@ -16,6 +17,8 @@ const Categories = ({ categories }) => {
       elements.push(element);
     }
   });
+
+  // Render all o fthe categories from above
   return (
     <View style={styles.container}>
       {elements}
