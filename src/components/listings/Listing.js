@@ -13,6 +13,7 @@ import Author from '../shared/Author';
 import Categories from './Categories';
 import Stars from './Stars';
 import Hours from './Hours';
+import ImageCarousel from './ImageCarousel';
 
 class Listing extends Component {
   constructor(props) {
@@ -80,6 +81,9 @@ class Listing extends Component {
               {this.state.listing.naldaFavorite}
             </Text>
           </View>
+        </View>
+        <ImageCarousel images={this.state.listing.images} />
+        <View style={appStyles.container}>
           <Text style={styles.subtitle}>
             {'Price:'}
           </Text>
