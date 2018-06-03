@@ -1,8 +1,8 @@
-<p align="center">
-  <h1>Nalda Mobile App</h1>
-  <p>A centralized source for information, food, activities, and fun on and around college campuses.</p>
-</p>
-___
+# Nalda Mobile App
+
+A centralized source for information, food, activities, and fun on and around college campuses.
+
+--------
 
 ### General information
 
