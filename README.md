@@ -1,6 +1,37 @@
-# Nalda Mobile App
+<p align="center">
+  <h1>Nalda Mobile App</h1>
+  <p>A centralized source for information, food, activities, and fun on and around college campuses.</p>
+</p>
+___
 
-Mobile app for Nalda. For the website repository, check out [this](https://github.com/adamripley98/nalda).
+### General information
+
+Mobile app for Nalda. For the website repository, check out [this](https://github.com/adamripley98/nalda). This app was build with React Native. The backend API leverages Express and MongoDB and is hosted along with the [Nalda website](https://naldacampus.com).
+
+### Frontend architecture
+```
+│
+├─ src                 # Run scripts, repair scripts
+│  ├─ components       # React native components
+│     ├─ ...           # Components organized by section
+│     ├─ shared        # Components shared between others
+│     └─ Navigation.js # Component handling navigation
+│  ├─ images           # Images and icons
+│     └─ ...
+│  └─ styles           # Styles imported by components
+│     ├─ ...           # Component-specific styles
+│     ├─ shared        # Styles for shared components
+│     ├─ colors.js     # Colors imported by other styles
+│     ├─ fontSizes.js  # Font sizes imported by other styles
+│     ├─ navigation.js # Styles for the StackNavigator
+│     └─ app.js        # Application-level styles
+├─ ...                 # General configuration files
+├─ .gitignore          # Lists files not pushed to git
+├─ .eslintrc.js        # Setup for JS linter
+├─ package.json        # Dependencies
+├─ App.js              # App component
+└─ README.md           # Documentation
+```
 
 ## Create React Native App Configuration
 
