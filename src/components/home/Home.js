@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import axios from 'axios';
 
 // Import routes
@@ -10,6 +10,7 @@ import styles from '../../styles/app';
 
 // Import components
 import Error from '../shared/Error';
+import Loading from '../shared/Loading';
 import HomeComponents from './HomeComponents';
 
 export default class Home extends Component {
@@ -49,9 +50,7 @@ export default class Home extends Component {
   render() {
     if (this.state.loading) {
       return (
-        <View style={styles.container}>
-          <Text>Loading...</Text>
-        </View>
+        <Loading />
       );
     }
 
