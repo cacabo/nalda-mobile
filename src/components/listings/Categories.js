@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from '../../styles/listings/categories';
+import categoryMap from './categoryMap';
 
 const Categories = ({ categories }) => {
   const elements = [];
@@ -9,7 +10,7 @@ const Categories = ({ categories }) => {
     if (categories[key]) {
       const element = (
         <Text style={styles.category} key={key}>
-          {key}
+          {categoryMap[key] || key}
         </Text>
       );
       elements.push(element);
