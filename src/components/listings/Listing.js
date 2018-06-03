@@ -9,6 +9,9 @@ import styles from '../../styles/listings/listing';
 // Import components
 import Loading from '../shared/Loading';
 import Error from '../shared/Error';
+import Author from '../shared/Author';
+import Categories from './Categories';
+import Stars from './Stars';
 
 class Listing extends Component {
   constructor(props) {
@@ -59,9 +62,33 @@ class Listing extends Component {
           <Text style={styles.title}>
             {this.state.listing.title}
           </Text>
+          <Author
+            author={this.state.author}
+            createdAt={this.state.listing.createdAt}
+            updatedAt={this.state.listing.updatedAt}
+          />
+          <Categories categories={this.state.listing.categories} />
           <Text style={styles.description}>
             {this.state.listing.description}
           </Text>
+          <View style={styles.naldaFavorite}>
+            <Text style={styles.subtitle}>
+              {"Nalda's favorite:"}
+            </Text>
+            <Text>
+              {this.state.listing.naldaFavorite}
+            </Text>
+          </View>
+          <Text style={styles.subtitle}>
+            {'Price:'}
+          </Text>
+          <Text>
+            {this.state.listing.price}
+          </Text>
+          <Text style={styles.subtitle}>
+            {"Nalda's rating:"}
+          </Text>
+          <Stars rating={this.state.listing.rating} />
         </View>
       </ScrollView>
     );
