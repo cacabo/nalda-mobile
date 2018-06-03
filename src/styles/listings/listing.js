@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { black, darkGray, lightGray } from '../colors';
+import { black, darkGray, lightGray, lighterGray } from '../colors';
 import { large, medium } from '../fontSizes';
 
 export default StyleSheet.create({
@@ -37,6 +37,9 @@ export default StyleSheet.create({
     flexDirection: 'row',
     borderWidth: 1,
     borderColor: lightGray,
+  },
+  rowColored: {
+    backgroundColor: lighterGray,
   },
   col: {
     flex: 1,

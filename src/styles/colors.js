@@ -1,5 +1,6 @@
 // Neutrals
 export const white = '#ffffff';
+export const lighterGray = '#fafafa';
 export const lightGray = '#efefef';
 export const darkGray = '#555555';
 export const black = '#000000';

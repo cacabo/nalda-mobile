@@ -29,11 +29,15 @@ class Hours extends Component {
     return keys.reduce(reducer, false);
   }
 
-  renderDay(day) {
+  renderDay(day, index) {
     const hours = this.props.hours[day.toLowerCase()];
     if (hours.start && hours.finish) {
+      const isEven = !(index % 2);
+      let rowStyles;
+      if (isEven) rowStyles = [styles.row, styles.rowColored];
+      else rowStyles = styles.row;
       return (
-        <View style={styles.row} key={day}>
+        <View style={rowStyles} key={day}>
           <View style={styles.col}>
             <Text>
               {day}
@@ -48,7 +52,20 @@ class Hours extends Component {
       );
     }
 
-    return null;
+    return (
+      <View style={styles.row} key={day}>
+        <View style={styles.col}>
+          <Text>
+            {day}
+          </Text>
+        </View>
+        <View style={styles.col}>
+          <Text>
+            Closed
+          </Text>
+        </View>
+      </View>
+    );
   }
 
   renderHours() {
@@ -85,125 +102,6 @@ class Hours extends Component {
     return null;
   }
 }
-
-// {
-//   (hours.monday.start && hours.monday.finish) ? (
-//     <View style={styles.row}>
-//       <View style={styles.col}>
-//         <Text>
-//           Monday
-//         </Text>
-//       </View>
-//       <View>
-//         {this.formatHours(hours.monday.start)} - {this.formatHours(hours.monday.finish)}
-//       </View>
-//     </View>
-//   ) : null
-// }
-// {
-//   (hours.tuesday.start && hours.tuesday.finish) ? (
-//     <View style={styles.row}>
-//       <View style={styles.col}>
-//         <Text>
-//           Tuesday
-//         </Text>
-//       </View>
-//       <View style={styles.col}>
-//         <Text>
-//           {this.formatHours(hours.tuesday.start)}
-//           -
-//           {this.formatHours(hours.tuesday.finish)}
-//         </Text>
-//       </View>
-//     </View>
-//   ) : null
-// }
-// {
-//   (hours.wednesday.start && hours.wednesday.finish) ? (
-//     <View style={styles.row}>
-//       <View style={styles.col}>
-//         <Text>
-//           Wednesday
-//         </Text>
-//       </View>
-//       <View style={styles.col}>
-//         <Text>
-//           {this.formatHours(hours.wednesday.start)}
-//           -
-//           {this.formatHours(hours.wednesday.finish)}
-//         </Text>
-//       </View>
-//     </View>
-//   ) : null
-// }
-// {
-//   (hours.thursday.start && hours.thursday.finish) ? (
-//     <View style={styles.row}>
-//       <View style={styles.col}>
-//         <Text>
-//           Thursday
-//         </Text>
-//       </View>
-//       <View style={styles.col}>
-//         <Text>
-//           {this.formatHours(hours.thursday.start)}
-//           -
-//           {this.formatHours(hours.thursday.finish)}
-//         </Text>
-//       </View>
-//     </View>
-//   ) : null
-// }
-// {
-//   (hours.friday.start && hours.friday.finish) ? (
-//     <View style={styles.row}>
-//       <View style={styles.col}>
-//         <Text>
-//           Friday
-//         </Text>
-//       </View>
-//       <View style={styles.col}>
-//         <Text>
-//           {this.formatHours(hours.friday.start)}
-//           -
-//           {this.formatHours(hours.friday.finish)}
-//         </Text>
-//       </View>
-//     </View>
-//   ) : null
-// }
-// {
-//   (hours.saturday.start && hours.saturday.finish) ? (
-//     <View style={styles.row}>
-//       <View style={styles.col}>
-//         Saturday
-//       </View>
-//       <View style={styles.col}>
-//         <Text>
-//           {this.formatHours(hours.saturday.start)}
-//           -
-//           {this.formatHours(hours.saturday.finish)}
-//         </Text>
-//       </View>
-//     </View>
-//   ) : null
-// }
-// {
-//   (hours.sunday.start && hours.sunday.finish) ? (
-//     <View style={styles.row}>
-//       <View style={styles.col}>
-//         Sunday
-//       </View>
-//       <View style={styles.col}>
-//         <Text>
-//           {this.formatHours(hours.sunday.start)}
-//           -
-//           {this.formatHours(hours.sunday.finish)}
-//         </Text>
-//       </View>
-//     </View>
-//   ) : null
-// }
 
 Hours.propTypes = {
   hours: PropTypes.object.isRequired,
