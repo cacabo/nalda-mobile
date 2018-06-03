@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, View } from 'react-native';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 // Import routes
 import { homePath } from '../../api';
@@ -13,7 +14,7 @@ import Error from '../shared/Error';
 import Loading from '../shared/Loading';
 import HomeComponents from './HomeComponents';
 
-export default class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,10 +58,19 @@ export default class Home extends Component {
     return (
       <ScrollView>
         <View style={styles.container}>
-          <HomeComponents components={this.state.components} />
+          <HomeComponents
+            components={this.state.components}
+            navigation={this.props.navigation}
+          />
           <Error error={this.state.error} />
         </View>
       </ScrollView>
     );
   }
 }
+
+Home.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
+
+export default Home;

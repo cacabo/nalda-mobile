@@ -7,7 +7,9 @@ const ErrorMessage = ({ error }) => {
   if (error) {
     return (
       <View style={styles.error}>
-        <Text>{error}</Text>
+        <Text style={styles.text}>
+          {error}
+        </Text>
       </View>
     );
   }

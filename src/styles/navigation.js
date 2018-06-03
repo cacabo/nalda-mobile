@@ -15,4 +15,7 @@ export default StyleSheet.create({
     paddingTop: 12,
     paddingBottom: 12,
   },
+  card: {
+    backgroundColor: white,
+  },
 });

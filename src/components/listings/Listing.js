@@ -1,31 +1,32 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text } from 'react-native';
+import { Image, ScrollView, View, Text } from 'react-native';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import { listingPath } from '../../api';
 import appStyles from '../../styles/app';
+import styles from '../../styles/listings/listing';
 
 // Import components
 import Loading from '../shared/Loading';
 import Error from '../shared/Error';
 
-export default class Home extends Component {
+class Listing extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true,
-      error: '',
-      // TODO
     };
   }
 
   componentDidMount() {
-    // TODO pass along the listing ID
-    axios.get(listingPath('128394'))
+    const { id } = this.props.navigation.state.params;
+    axios.get(listingPath(id))
       .then((res) => {
         if (res.data.success) {
           this.setState({
             loading: false,
-            // TODO
+            listing: res.data.data,
+            author: res.data.author,
           });
         } else {
           this.setState({
@@ -49,13 +50,26 @@ export default class Home extends Component {
 
     return (
       <ScrollView>
+        <Image
+          style={styles.image}
+          source={{ uri: this.state.listing.image }}
+        />
         <View style={appStyles.container}>
           <Error error={this.state.error} />
-          <Text>
-            This is a listing
+          <Text style={styles.title}>
+            {this.state.listing.title}
+          </Text>
+          <Text style={styles.description}>
+            {this.state.listing.description}
           </Text>
         </View>
       </ScrollView>
     );
   }
 }
+
+Listing.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
+
+export default Listing;
