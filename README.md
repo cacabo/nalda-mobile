@@ -6,32 +6,48 @@ A centralized source for information, food, activities, and fun on and around co
 
 ### General information
 
-Mobile app for Nalda. For the website repository, check out [this](https://github.com/adamripley98/nalda). This app was build with React Native. The backend API leverages Express and MongoDB and is hosted along with the [Nalda website](https://naldacampus.com).
+For the website repository, check out [this](https://github.com/adamripley98/nalda). This app was build with React Native. The backend API leverages Express and MongoDB and is hosted along with the [Nalda website](https://naldacampus.com).
+
+This app was built on top of the React Community's Create React Native App. The original README for that repository is appended below.
 
 ### Frontend architecture
 ```
 │
-├─ src                 # Run scripts, repair scripts
-│  ├─ components       # React native components
-│     ├─ ...           # Components organized by section
-│     ├─ shared        # Components shared between others
-│     └─ Navigation.js # Component handling navigation
-│  ├─ images           # Images and icons
+├─ src                  # Run scripts, repair scripts
+│  ├─ components        # React native components
+│     ├─ ...            # Components organized by section
+│     ├─ shared         # Components shared between others
+│     │  └─ ...
+│     └─ Navigation.js  # Component handling navigation
+│  ├─ images            # Images and icons
 │     └─ ...
-│  └─ styles           # Styles imported by components
-│     ├─ ...           # Component-specific styles
-│     ├─ shared        # Styles for shared components
-│     ├─ colors.js     # Colors imported by other styles
-│     ├─ fontSizes.js  # Font sizes imported by other styles
-│     ├─ navigation.js # Styles for the StackNavigator
-│     └─ app.js        # Application-level styles
-├─ ...                 # General configuration files
-├─ .gitignore          # Lists files not pushed to git
-├─ .eslintrc.js        # Setup for JS linter
-├─ package.json        # Dependencies
-├─ App.js              # App component
-└─ README.md           # Documentation
+│  └─ styles            # Styles imported by components
+│     ├─ ...            # Component-specific styles
+│     ├─ shared         # Styles for shared components
+│     │  └─ ...
+│     ├─ colors.js      # Colors imported by other styles
+│     ├─ fontSizes.js   # Font sizes imported by other styles
+│     ├─ navigation.js  # Styles for the StackNavigator
+│     └─ app.js         # Application-level styles
+├─ ...                  # General configuration files
+├─ .gitignore           # Lists files not pushed to git
+├─ .eslintrc.js         # Setup for JS linter
+├─ package.json         # Dependencies
+├─ App.js               # App component
+└─ README.md            # Documentation
 ```
+
+### Development
+
+Have ESLint and related packages installed for both Node and your editor of choice (Atom, Sublime, Webstorm, etc.). This will ensure relatively clean and consistent JS syntax and software design.
+
+To run the app, leverage Expo. Upon installing Expo and configuring your account, simply run:
+```
+exp start
+```
+And open the app from the Expo app on your Android or iOS device.
+
+--------
 
 ## Create React Native App Configuration
 
