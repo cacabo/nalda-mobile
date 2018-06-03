@@ -29,4 +29,20 @@ export default StyleSheet.create({
     borderRadius: 8,
     marginBottom: 12,
   },
+  table: {
+    borderWidth: 1,
+    borderColor: lightGray,
+  },
+  row: {
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: lightGray,
+  },
+  col: {
+    flex: 1,
+    paddingTop: 4,
+    paddingBottom: 4,
+    paddingLeft: 8,
+    paddingRight: 8,
+  },
 });

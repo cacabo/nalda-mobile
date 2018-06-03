@@ -12,6 +12,7 @@ import Error from '../shared/Error';
 import Author from '../shared/Author';
 import Categories from './Categories';
 import Stars from './Stars';
+import Hours from './Hours';
 
 class Listing extends Component {
   constructor(props) {
@@ -89,6 +90,7 @@ class Listing extends Component {
             {"Nalda's rating:"}
           </Text>
           <Stars rating={this.state.listing.rating} />
+          <Hours hours={this.state.listing.hours} />
         </View>
       </ScrollView>
     );
