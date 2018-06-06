@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 // Import styles
 import textStyles from '../../styles/shared/text';
+import styles from '../../styles/listings/amenities';
 
 // Import text map
 import amenityMap from './amenityMap';
@@ -34,12 +35,12 @@ const images = {
 const Amenities = ({ amenities }) => {
   const amenitiesView = Object.keys(amenities).map(amenity => (
     amenities[amenity] ? (
-      <View key={amenity}>
+      <View key={amenity} style={styles.amenity}>
         <Image
           source={images[amenity]}
-          style={{ width: 50, height: 50 }}
+          style={styles.image}
         />
-        <Text>
+        <Text style={styles.text}>
           {amenityMap[amenity] || amenity}
         </Text>
       </View>
@@ -47,7 +48,7 @@ const Amenities = ({ amenities }) => {
   ));
 
   return (
-    <View>
+    <View style={styles.section}>
       <Text style={textStyles.subtitle}>
         Amenities:
       </Text>

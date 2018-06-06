@@ -87,16 +87,22 @@ class Listing extends Component {
         </View>
         <ImageCarousel images={this.state.listing.images} />
         <View style={appStyles.container}>
-          <Text style={textStyles.subtitle}>
-            {'Price:'}
-          </Text>
-          <Text style={textStyles.body}>
-            {this.state.listing.price}
-          </Text>
-          <Text style={textStyles.subtitle}>
-            {"Nalda's rating:"}
-          </Text>
-          <Stars rating={this.state.listing.rating} />
+          <View style={styles.section}>
+            <Text style={textStyles.subtitle}>
+              {'Price:'}
+            </Text>
+            <Text style={textStyles.body}>
+              {this.state.listing.price}
+            </Text>
+          </View>
+
+          <View style={styles.section}>
+            <Text style={textStyles.subtitle}>
+              {"Nalda's rating:"}
+            </Text>
+            <Stars rating={this.state.listing.rating} />
+          </View>
+
           <Amenities amenities={this.state.listing.amenities} />
           <Hours hours={this.state.listing.hours} />
           <Location location={this.state.listing.location} />

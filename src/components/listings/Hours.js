@@ -32,11 +32,14 @@ class Hours extends Component {
 
   renderDay(day, index) {
     const hours = this.props.hours[day.toLowerCase()];
+    // Add a gray background to every other row
+    const isEven = !(index % 2);
+    let rowStyles;
+    if (isEven) rowStyles = [styles.row, styles.rowColored];
+    else rowStyles = styles.row;
+
     if (hours.start && hours.finish) {
-      const isEven = !(index % 2);
-      let rowStyles;
-      if (isEven) rowStyles = [styles.row, styles.rowColored];
-      else rowStyles = styles.row;
+      // Render the row
       return (
         <View style={rowStyles} key={day}>
           <View style={styles.col}>
@@ -54,7 +57,7 @@ class Hours extends Component {
     }
 
     return (
-      <View style={styles.row} key={day}>
+      <View style={rowStyles} key={day}>
         <View style={styles.col}>
           <Text>
             {day}
@@ -91,7 +94,7 @@ class Hours extends Component {
   render() {
     if (this.areHours()) {
       return (
-        <View>
+        <View style={styles.section}>
           <Text style={textStyles.subtitle}>
             Hours:
           </Text>

@@ -8,6 +8,10 @@ export default StyleSheet.create({
     color: darkGray,
     marginBottom: 12,
   },
+  section: {
+    flex: 1,
+    paddingBottom: 12,
+  },
   image: {
     flex: 1,
     width: null,
@@ -22,7 +26,7 @@ export default StyleSheet.create({
   table: {
     borderWidth: 1,
     borderColor: lightGray,
-    marginBottom: 12,
+    flex: 1,
   },
   row: {
     flexDirection: 'row',
