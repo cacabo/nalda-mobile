@@ -16,6 +16,7 @@ import Stars from './Stars';
 import Hours from './Hours';
 import ImageCarousel from './ImageCarousel';
 import Location from './Location';
+import Amenities from './Amenities';
 
 class Listing extends Component {
   constructor(props) {
@@ -96,6 +97,7 @@ class Listing extends Component {
             {"Nalda's rating:"}
           </Text>
           <Stars rating={this.state.listing.rating} />
+          <Amenities amenities={this.state.listing.amenities} />
           <Hours hours={this.state.listing.hours} />
           <Location location={this.state.listing.location} />
         </View>
