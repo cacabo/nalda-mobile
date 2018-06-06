@@ -47,6 +47,9 @@ const Amenities = ({ amenities }) => {
     ) : null
   ));
 
+  // Return nothing if there are no amenities to show
+  if (!amenitiesView || !amenitiesView.length) return null;
+
   return (
     <View style={styles.section}>
       <Text style={textStyles.subtitle}>
