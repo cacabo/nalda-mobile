@@ -11,6 +11,8 @@ class ImageCarousel extends Component {
     this.state = {
       width,
     };
+
+    // Bind 'this' to helper methods
     this.renderItem = this.renderItem.bind(this);
   }
 

@@ -60,7 +60,12 @@ class Home extends Component {
       <ScrollView>
         <View style={styles.container}>
           <Error error={this.state.error} />
-          <Banner banner={this.state.banner} />
+        </View>
+        <Banner
+          banner={this.state.banner}
+          navigation={this.props.navigation}
+        />
+        <View style={styles.container}>
           <HomeComponents
             components={this.state.components}
             navigation={this.props.navigation}
