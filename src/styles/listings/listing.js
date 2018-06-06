@@ -1,18 +1,8 @@
 import { StyleSheet } from 'react-native';
-import { black, darkGray, lightGray, lighterGray } from '../colors';
-import { large, medium } from '../fontSizes';
+import { darkGray, lightGray, lighterGray } from '../colors';
+import { medium } from '../fontSizes';
 
 export default StyleSheet.create({
-  title: {
-    fontSize: large,
-    color: black,
-    marginBottom: 8,
-    fontWeight: 'bold',
-  },
-  subtitle: {
-    fontWeight: 'bold',
-    marginBottom: 4,
-  },
   description: {
     fontSize: medium,
     color: darkGray,
@@ -32,6 +22,7 @@ export default StyleSheet.create({
   table: {
     borderWidth: 1,
     borderColor: lightGray,
+    marginBottom: 12,
   },
   row: {
     flexDirection: 'row',

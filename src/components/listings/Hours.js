@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
 import moment from 'moment';
+import textStyles from '../../styles/shared/text';
 import styles from '../../styles/listings/listing';
 
 class Hours extends Component {
@@ -91,7 +92,7 @@ class Hours extends Component {
     if (this.areHours()) {
       return (
         <View>
-          <Text style={styles.subtitle}>
+          <Text style={textStyles.subtitle}>
             Hours:
           </Text>
           {this.renderHours()}

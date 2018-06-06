@@ -13,13 +13,14 @@ import styles from '../../styles/app';
 import Error from '../shared/Error';
 import Loading from '../shared/Loading';
 import HomeComponents from './HomeComponents';
+import Banner from './Banner';
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true,
-      // banner: {},
+      banner: {},
       components: {},
     };
   }
@@ -30,7 +31,7 @@ class Home extends Component {
         if (res.data.success) {
           this.setState({
             loading: false,
-            // banner: res.data.banner,
+            banner: res.data.banner,
             components: res.data.components,
           });
         } else {
@@ -58,11 +59,12 @@ class Home extends Component {
     return (
       <ScrollView>
         <View style={styles.container}>
+          <Error error={this.state.error} />
+          <Banner banner={this.state.banner} />
           <HomeComponents
             components={this.state.components}
             navigation={this.props.navigation}
           />
-          <Error error={this.state.error} />
         </View>
       </ScrollView>
     );

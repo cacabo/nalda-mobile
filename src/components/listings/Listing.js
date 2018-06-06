@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { listingPath } from '../../api';
 import appStyles from '../../styles/app';
 import styles from '../../styles/listings/listing';
+import textStyles from '../../styles/shared/text';
 
 // Import components
 import Loading from '../shared/Loading';
@@ -14,6 +15,7 @@ import Categories from './Categories';
 import Stars from './Stars';
 import Hours from './Hours';
 import ImageCarousel from './ImageCarousel';
+import Location from './Location';
 
 class Listing extends Component {
   constructor(props) {
@@ -61,7 +63,7 @@ class Listing extends Component {
         />
         <View style={appStyles.container}>
           <Error error={this.state.error} />
-          <Text style={styles.title}>
+          <Text style={textStyles.title}>
             {this.state.listing.title}
           </Text>
           <Author
@@ -74,27 +76,28 @@ class Listing extends Component {
             {this.state.listing.description}
           </Text>
           <View style={styles.naldaFavorite}>
-            <Text style={styles.subtitle}>
+            <Text style={textStyles.subtitle}>
               {"Nalda's favorite:"}
             </Text>
-            <Text>
+            <Text style={textStyles.body}>
               {this.state.listing.naldaFavorite}
             </Text>
           </View>
         </View>
         <ImageCarousel images={this.state.listing.images} />
         <View style={appStyles.container}>
-          <Text style={styles.subtitle}>
+          <Text style={textStyles.subtitle}>
             {'Price:'}
           </Text>
-          <Text>
+          <Text style={textStyles.body}>
             {this.state.listing.price}
           </Text>
-          <Text style={styles.subtitle}>
+          <Text style={textStyles.subtitle}>
             {"Nalda's rating:"}
           </Text>
           <Stars rating={this.state.listing.rating} />
           <Hours hours={this.state.listing.hours} />
+          <Location location={this.state.listing.location} />
         </View>
       </ScrollView>
     );
