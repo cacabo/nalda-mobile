@@ -6,7 +6,6 @@ import PreviewVideo from './PreviewVideo';
 
 const Preview = ({ content, contentType, navigation }) => {
   const type = contentType || content.contentType;
-  // TODO other checking ?
   if (type === 'listing' || type === 'Listings') {
     return (
       <PreviewListing

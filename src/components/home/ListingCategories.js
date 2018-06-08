@@ -1,5 +1,6 @@
 // Import frameworks
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from '../../styles/home/homeComponent';
 
@@ -9,7 +10,7 @@ import categoryMap from '../listings/categoryMap';
 /**
  * Render the categories for all listings
  */
-const ListingCategories = () => (
+const ListingCategories = ({ navigation }) => (
   <View>
     <Text style={styles.title}>
       What are you looking for?
@@ -20,7 +21,11 @@ const ListingCategories = () => (
     <View style={[styles.container, styles.categories]}>
       {
         Object.keys(categoryMap).map(key => (
-          <TouchableOpacity style={styles.category} key={key}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ListingsCategory', { category: key })}
+            style={styles.category}
+            key={key}
+          >
             <Text style={styles.categoryText}>
               {categoryMap[key] || key}
             </Text>
@@ -30,5 +35,9 @@ const ListingCategories = () => (
     </View>
   </View>
 );
+
+ListingCategories.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
 
 export default ListingCategories;

@@ -67,7 +67,7 @@ class Home extends Component {
           navigation={this.props.navigation}
         />
         <View style={styles.container}>
-          <ListingCategories />
+          <ListingCategories navigation={this.props.navigation} />
           <HomeComponents
             components={this.state.components}
             navigation={this.props.navigation}
