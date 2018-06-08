@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { categoryPath } from '../../api';
 import appStyles from '../../styles/app';
+import textStyles from '../../styles/shared/text';
 
 // Import components
 import Loading from '../shared/Loading';
@@ -47,6 +48,9 @@ class ListingsCategory extends Component {
     return (
       <ScrollView>
         <View style={appStyles.container}>
+          <Text style={textStyles.title}>
+            {`Listings tagged with "${this.props.navigation.state.params.category}"`}
+          </Text>
           <Error error={this.state.error} />
           <Previews
             content={this.state.listings}
