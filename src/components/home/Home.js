@@ -14,6 +14,7 @@ import Error from '../shared/Error';
 import Loading from '../shared/Loading';
 import HomeComponents from './HomeComponents';
 import Banner from './Banner';
+import ListingCategories from './ListingCategories';
 
 class Home extends Component {
   constructor(props) {
@@ -66,6 +67,7 @@ class Home extends Component {
           navigation={this.props.navigation}
         />
         <View style={styles.container}>
+          <ListingCategories />
           <HomeComponents
             components={this.state.components}
             navigation={this.props.navigation}
