@@ -15,12 +15,12 @@ This app was built on top of the React Community's Create React Native App. The 
 │
 ├─ src                  # Run scripts, repair scripts
 │  ├─ components        # React native components
-│     ├─ ...            # Components organized by section
-│     ├─ shared         # Components shared between others
-│     │  └─ ...
-│     └─ Navigation.js  # Component handling navigation
+│  │  ├─ ...            # Components organized by section
+│  │  ├─ shared         # Components shared between others
+│  │  │  └─ ...
+│  │  └─ Navigation.js  # Component handling navigation
 │  ├─ images            # Images and icons
-│     └─ ...
+│  │  └─ ...
 │  └─ styles            # Styles imported by components
 │     ├─ ...            # Component-specific styles
 │     ├─ shared         # Styles for shared components
