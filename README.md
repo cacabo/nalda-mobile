@@ -6,7 +6,7 @@ A centralized source for information, food, activities, and fun on and around co
 
 ### General information
 
-For the website repository, check out [this](https://github.com/adamripley98/nalda). This app was build with React Native. The backend API leverages Express and MongoDB and is hosted along with the [Nalda website](https://naldacampus.com).
+For the website repository, check out [this](https://github.com/adamripley98/nalda). This app was build with React Native. The backend API leverages Express and MongoDB and is hosted along with the [Nalda website](https://www.naldacampus.com).
 
 This app was built on top of the React Community's Create React Native App. The original README for that repository is appended below.
 
