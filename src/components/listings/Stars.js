@@ -3,7 +3,7 @@ import { Image, View } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from '../../styles/listings/stars';
 
-// Import stare images
+// Import star images
 const empty = require('../../images/stars/empty.png');
 const half = require('../../images/stars/half.png');
 const full = require('../../images/stars/full.png');
@@ -13,6 +13,7 @@ const Stars = ({ rating }) => {
   const numHalf = parseInt(rating + 0.5, 10) - numFull;
   const stars = [];
   let i;
+
   for (i = 0; i < 5; i += 1) {
     let image;
     if (i < numFull) {
@@ -40,6 +41,7 @@ const Stars = ({ rating }) => {
         />
       );
     }
+
     stars.push(image);
   }
 

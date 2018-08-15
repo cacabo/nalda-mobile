@@ -1,13 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { white, lightGray } from './colors';
+import { darkBlue, white } from './colors';
 
 export default StyleSheet.create({
   nav: {
     paddingTop: 24,
     paddingBottom: 12,
-    backgroundColor: white,
-    borderBottomColor: lightGray,
-    borderBottomWidth: 1,
+    backgroundColor: darkBlue,
   },
   logo: {
     width: 38,

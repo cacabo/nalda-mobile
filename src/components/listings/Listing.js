@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { Image, ScrollView, View, Text } from 'react-native';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+
 import { listingPath } from '../../api';
+
 import appStyles from '../../styles/app';
 import styles from '../../styles/listings/listing';
 import textStyles from '../../styles/shared/text';
 
-// Import components
 import Loading from '../shared/Loading';
 import Error from '../shared/Error';
 import Author from '../shared/Author';
@@ -21,6 +22,7 @@ import Amenities from './Amenities';
 class Listing extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       loading: true,
     };
@@ -28,6 +30,7 @@ class Listing extends Component {
 
   componentDidMount() {
     const { id } = this.props.navigation.state.params;
+
     axios.get(listingPath(id))
       .then((res) => {
         if (res.data.success) {
@@ -64,9 +67,11 @@ class Listing extends Component {
         />
         <View style={appStyles.container}>
           <Error error={this.state.error} />
+
           <Text style={textStyles.title}>
             {this.state.listing.title}
           </Text>
+
           <Author
             author={this.state.author}
             createdAt={this.state.listing.createdAt}

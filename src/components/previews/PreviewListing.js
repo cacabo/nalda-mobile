@@ -8,8 +8,10 @@ import Stars from '../listings/Stars';
 import Categories from '../listings/Categories';
 
 const PreviewListing = ({ listing, navigation }) => {
-  if (!listing) return null;
+  if (!listing || !navigation) return null;
+
   const id = listing._id || listing.contentId;
+
   return (
     <TouchableHighlight onPress={() => navigation.navigate('Listing', { id })}>
       <View style={styles.preview}>

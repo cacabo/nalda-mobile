@@ -5,6 +5,7 @@ import styles from '../styles/navigation';
 
 // Import components
 import Home from './home/Home';
+import Listings from './listings/Listings';
 import Listing from './listings/Listing';
 import ListingsCategory from './listings/ListingsCategory';
 
@@ -33,6 +34,7 @@ const Navigator = createStackNavigator({
   Home: page(Home),
   Listing: page(Listing),
   ListingsCategory: page(ListingsCategory),
+  Listings: page(Listings),
 });
 
 export default Navigator;

@@ -8,3 +8,4 @@ export const black = '#000000';
 // Colors
 export const red = '#ff478d';
 export const blue = '#66ccff';
+export const darkBlue = '#004976';
