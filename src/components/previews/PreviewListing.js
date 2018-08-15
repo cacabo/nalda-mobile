@@ -7,26 +7,35 @@ import styles from '../../styles/previews/preview';
 import Stars from '../listings/Stars';
 import Categories from '../listings/Categories';
 
-const PreviewListing = ({ listing, navigation }) => {
-  if (!listing || !navigation) return null;
-
-  const id = listing._id || listing.contentId;
+const PreviewListing = ({
+  listing: {
+    image,
+    title,
+    rating,
+    categories,
+    description,
+    _id,
+    contentId,
+  },
+  navigation,
+}) => {
+  const id = _id || contentId;
 
   return (
     <TouchableHighlight onPress={() => navigation.navigate('Listing', { id })}>
       <View style={styles.preview}>
         <Image
-          source={{ uri: listing.image }}
+          source={{ uri: image }}
           resizeMode="cover"
           style={styles.image}
         />
         <Text style={styles.title}>
-          {listing.title}
+          {title}
         </Text>
-        <Stars rating={listing.rating} />
-        <Categories categories={listing.categories} />
+        <Stars rating={rating} />
+        <Categories categories={categories} />
         <Text style={styles.subtitle}>
-          {listing.description}
+          {description}
         </Text>
       </View>
     </TouchableHighlight>
@@ -34,7 +43,15 @@ const PreviewListing = ({ listing, navigation }) => {
 };
 
 PreviewListing.propTypes = {
-  listing: PropTypes.object.isRequired,
+  listing: PropTypes.shape({
+    image: PropTypes.string,
+    title: PropTypes.string,
+    rating: PropTypes.number,
+    categories: PropTypes.object,
+    description: PropTypes.string,
+    _id: PropTypes.string,
+    contentId: PropTypes.string,
+  }).isRequired,
   navigation: PropTypes.object.isRequired,
 };
 

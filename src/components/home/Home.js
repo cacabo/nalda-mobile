@@ -81,6 +81,10 @@ class Home extends Component {
             onPress={() => this.props.navigation.navigate('Listings')}
             title="View all Listings"
           />
+          <Button
+            onPress={() => this.props.navigation.navigate('Articles')}
+            title="View all Articles"
+          />
         </View>
       </ScrollView>
     );

@@ -9,6 +9,7 @@ import Home from './home/Home';
 import Listings from './listings/Listings';
 import Listing from './listings/Listing';
 import ListingsCategory from './listings/ListingsCategory';
+import Articles from './articles/Articles';
 
 const logo = require('../images/logo.png');
 
@@ -36,6 +37,7 @@ const screens = {
   Listing,
   ListingsCategory,
   Listings,
+  Articles,
 };
 
 const pages = {};

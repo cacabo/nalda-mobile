@@ -10,24 +10,35 @@ import Error from '../shared/Error';
 import Author from '../shared/Author';
 import Categories from './Categories';
 
-const Overview = ({ listing, error, author }) => (
+const Overview = ({
+  listing: {
+    title,
+    createdAt,
+    updatedAt,
+    description,
+    categories,
+    naldaFavorite,
+  },
+  error,
+  author,
+}) => (
   <View style={appStyles.container}>
     <Error error={error} />
 
     <Text style={textStyles.title}>
-      {listing.title}
+      {title}
     </Text>
 
     <Author
       author={author}
-      createdAt={listing.createdAt}
-      updatedAt={listing.updatedAt}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
     />
 
-    <Categories categories={listing.categories} />
+    <Categories categories={categories} />
 
     <Text style={styles.description}>
-      {listing.description}
+      {description}
     </Text>
 
     <View style={styles.naldaFavorite}>
@@ -35,7 +46,7 @@ const Overview = ({ listing, error, author }) => (
         {"Nalda's favorite:"}
       </Text>
       <Text style={textStyles.body}>
-        {listing.naldaFavorite}
+        {naldaFavorite}
       </Text>
     </View>
   </View>
@@ -47,7 +58,14 @@ Overview.defaultProps = {
 
 Overview.propTypes = {
   error: PropTypes.string,
-  listing: PropTypes.object.isRequired,
+  listing: PropTypes.shape({
+    title: PropTypes.string,
+    createdAt: PropTypes.number,
+    updatedAt: PropTypes.number,
+    description: PropTypes.string,
+    categories: PropTypes.object,
+    naldaFavorite: PropTypes.string,
+  }).isRequired,
   author: PropTypes.object.isRequired,
 };
 
