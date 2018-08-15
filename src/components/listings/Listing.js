@@ -10,14 +10,12 @@ import styles from '../../styles/listings/listing';
 import textStyles from '../../styles/shared/text';
 
 import Loading from '../shared/Loading';
-import Error from '../shared/Error';
-import Author from '../shared/Author';
-import Categories from './Categories';
 import Stars from './Stars';
 import Hours from './Hours';
 import ImageCarousel from './ImageCarousel';
 import Location from './Location';
 import Amenities from './Amenities';
+import Overview from './Overview';
 
 class Listing extends Component {
   constructor(props) {
@@ -65,32 +63,15 @@ class Listing extends Component {
           style={styles.image}
           source={{ uri: this.state.listing.image }}
         />
-        <View style={appStyles.container}>
-          <Error error={this.state.error} />
 
-          <Text style={textStyles.title}>
-            {this.state.listing.title}
-          </Text>
+        <Overview
+          listing={this.state.listing}
+          error={this.state.error}
+          author={this.state.author}
+        />
 
-          <Author
-            author={this.state.author}
-            createdAt={this.state.listing.createdAt}
-            updatedAt={this.state.listing.updatedAt}
-          />
-          <Categories categories={this.state.listing.categories} />
-          <Text style={styles.description}>
-            {this.state.listing.description}
-          </Text>
-          <View style={styles.naldaFavorite}>
-            <Text style={textStyles.subtitle}>
-              {"Nalda's favorite:"}
-            </Text>
-            <Text style={textStyles.body}>
-              {this.state.listing.naldaFavorite}
-            </Text>
-          </View>
-        </View>
         <ImageCarousel images={this.state.listing.images} />
+
         <View style={appStyles.container}>
           <View style={styles.section}>
             <Text style={textStyles.subtitle}>
