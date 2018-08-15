@@ -1,16 +1,15 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import { View, Image } from 'react-native';
+
 import styles from '../styles/navigation';
 import { white } from '../styles/colors';
 
-// Import components
 import Home from './home/Home';
 import Listings from './listings/Listings';
 import Listing from './listings/Listing';
 import ListingsCategory from './listings/ListingsCategory';
 
-// Import logo image
 const logo = require('../images/logo.png');
 
 const navigationOptions = () => ({
@@ -24,7 +23,7 @@ const navigationOptions = () => ({
   ),
   headerStyle: styles.nav,
   cardStyle: styles.card,
-  headerTintColor: white,
+  headerTintColor: white, // Icon color
 });
 
 const page = screen => ({

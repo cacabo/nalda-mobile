@@ -5,6 +5,7 @@ export default StyleSheet.create({
   nav: {
     backgroundColor: darkBlue,
     paddingBottom: 12,
+    borderBottomWidth: 0,
   },
   logo: {
     width: 154,
