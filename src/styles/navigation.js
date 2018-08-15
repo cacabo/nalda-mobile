@@ -3,15 +3,12 @@ import { darkBlue, white } from './colors';
 
 export default StyleSheet.create({
   nav: {
-    paddingTop: 24,
-    paddingBottom: 12,
     backgroundColor: darkBlue,
+    paddingBottom: 12,
   },
   logo: {
-    width: 38,
+    width: 154,
     height: 38,
-    paddingTop: 12,
-    paddingBottom: 12,
   },
   card: {
     backgroundColor: white,

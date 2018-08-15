@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import { View, Image } from 'react-native';
 import styles from '../styles/navigation';
+import { white } from '../styles/colors';
 
 // Import components
 import Home from './home/Home';
@@ -10,7 +11,7 @@ import Listing from './listings/Listing';
 import ListingsCategory from './listings/ListingsCategory';
 
 // Import logo image
-const logo = require('../images/logo_blue.png');
+const logo = require('../images/logo.png');
 
 const navigationOptions = () => ({
   headerTitle: (
@@ -23,6 +24,7 @@ const navigationOptions = () => ({
   ),
   headerStyle: styles.nav,
   cardStyle: styles.card,
+  headerTintColor: white,
 });
 
 const page = screen => ({
@@ -30,11 +32,19 @@ const page = screen => ({
   navigationOptions,
 });
 
-const Navigator = createStackNavigator({
-  Home: page(Home),
-  Listing: page(Listing),
-  ListingsCategory: page(ListingsCategory),
-  Listings: page(Listings),
+const screens = {
+  Home,
+  Listing,
+  ListingsCategory,
+  Listings,
+};
+
+const pages = {};
+
+Object.keys(screens).forEach((key) => {
+  pages[key] = page(screens[key]);
 });
+
+const Navigator = createStackNavigator(pages);
 
 export default Navigator;
