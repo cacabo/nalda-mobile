@@ -10,6 +10,7 @@ import Categories from '../listings/Categories';
 const PreviewListing = ({
   listing: {
     image,
+    imagePreview,
     title,
     rating,
     categories,
@@ -25,7 +26,7 @@ const PreviewListing = ({
     <TouchableHighlight onPress={() => navigation.navigate('Listing', { id })}>
       <View style={styles.preview}>
         <Image
-          source={{ uri: image }}
+          source={{ uri: imagePreview || image }}
           resizeMode="cover"
           style={styles.image}
         />
@@ -45,6 +46,7 @@ const PreviewListing = ({
 PreviewListing.propTypes = {
   listing: PropTypes.shape({
     image: PropTypes.string,
+    imagePreview: PropTypes.string,
     title: PropTypes.string,
     rating: PropTypes.number,
     categories: PropTypes.object,
