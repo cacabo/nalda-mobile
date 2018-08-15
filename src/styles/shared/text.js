@@ -19,4 +19,9 @@ export default StyleSheet.create({
     marginBottom: 4,
     fontSize: small,
   },
+  quote: {
+    fontWeight: 'normal',
+    marginBottom: 4,
+    fontSize: small, // TODO
+  },
 });

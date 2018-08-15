@@ -40,7 +40,7 @@ class Listing extends Component {
         } else {
           this.setState({
             loading: false,
-            error: res.data.error,
+            error: res.data.error || 'Something went wrong',
           });
         }
       })

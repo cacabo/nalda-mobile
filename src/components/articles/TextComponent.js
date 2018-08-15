@@ -1,0 +1,15 @@
+import React from 'react';
+import { Text } from 'react-native';
+import PropTypes from 'prop-types';
+
+import textStyles from '../../styles/shared/text';
+
+const TextComponent = ({ body }) => (
+  <Text styles={textStyles.body}>{body}</Text>
+);
+
+TextComponent.propTypes = {
+  body: PropTypes.string.isRequired,
+};
+
+export default TextComponent;

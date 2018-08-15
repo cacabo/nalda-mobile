@@ -10,3 +10,4 @@ export const listingPath = id => getURL(`listings/${id}`);
 export const listingsPath = getURL('listings');
 export const categoryPath = category => getURL(`listings/categories/${category}`);
 export const articlesPath = getURL('articles');
+export const articlePath = id => getURL(`articles/${id}`);
