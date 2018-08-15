@@ -10,6 +10,7 @@ import Listings from './listings/Listings';
 import Listing from './listings/Listing';
 import ListingsCategory from './listings/ListingsCategory';
 import Articles from './articles/Articles';
+import Article from './articles/Article';
 
 const logo = require('../images/logo.png');
 
@@ -38,6 +39,7 @@ const screens = {
   ListingsCategory,
   Listings,
   Articles,
+  Article,
 };
 
 const pages = {};
