@@ -24,10 +24,10 @@ class Article extends Component {
 
     axios.get(articlePath(id))
       .then((res) => {
-        if (res.data.success) {
+        if (res.data.article && res.data.author) {
           this.setState({
             loading: false,
-            article: res.data.data,
+            article: res.data.article,
             author: res.data.author,
           });
         } else {
@@ -58,7 +58,7 @@ class Article extends Component {
 
         <Image
           style={styles.image}
-          source={{ uri: this.state.listing.image }}
+          source={{ uri: this.state.article.image }}
         />
       </ScrollView>
     );

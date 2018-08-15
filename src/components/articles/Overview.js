@@ -17,25 +17,33 @@ const Overview = ({
   },
   author,
   error,
-}) => (
-  <View style={appStyles.container}>
-    <Error error={error} />
+}) => {
+  if (error) {
+    return (
+      <View style={appStyles.container}>
+        <Error error={error} />
+      </View>
+    );
+  }
 
-    <Text style={textStyles.title}>
-      {title}
-    </Text>
+  return (
+    <View style={appStyles.container}>
+      <Text style={textStyles.title}>
+        {title}
+      </Text>
 
-    <Text style={textStyles.subtitle}>
-      {subtitle}
-    </Text>
+      <Text style={textStyles.subtitle}>
+        {subtitle}
+      </Text>
 
-    <Author
-      author={author}
-      createdAt={createdAt}
-      updatedAt={updatedAt}
-    />
-  </View>
-);
+      <Author
+        author={author}
+        createdAt={createdAt}
+        updatedAt={updatedAt}
+      />
+    </View>
+  );
+};
 
 Overview.defaultProps = {
   error: '',

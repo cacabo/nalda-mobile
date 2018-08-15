@@ -21,36 +21,46 @@ const Overview = ({
   },
   error,
   author,
-}) => (
-  <View style={appStyles.container}>
-    <Error error={error} />
+}) => {
+  if (error) {
+    return (
+      <View style={appStyles.container}>
+        <Error error={error} />
+      </View>
+    );
+  }
 
-    <Text style={textStyles.title}>
-      {title}
-    </Text>
+  return (
+    <View style={appStyles.container}>
+      <Error error={error} />
 
-    <Author
-      author={author}
-      createdAt={createdAt}
-      updatedAt={updatedAt}
-    />
-
-    <Categories categories={categories} />
-
-    <Text style={styles.description}>
-      {description}
-    </Text>
-
-    <View style={styles.naldaFavorite}>
-      <Text style={textStyles.subtitle}>
-        {"Nalda's favorite:"}
+      <Text style={textStyles.title}>
+        {title}
       </Text>
-      <Text style={textStyles.body}>
-        {naldaFavorite}
+
+      <Author
+        author={author}
+        createdAt={createdAt}
+        updatedAt={updatedAt}
+      />
+
+      <Categories categories={categories} />
+
+      <Text style={styles.description}>
+        {description}
       </Text>
+
+      <View style={styles.naldaFavorite}>
+        <Text style={textStyles.subtitle}>
+          {"Nalda's favorite:"}
+        </Text>
+        <Text style={textStyles.body}>
+          {naldaFavorite}
+        </Text>
+      </View>
     </View>
-  </View>
-);
+  );
+};
 
 Overview.defaultProps = {
   error: '',
