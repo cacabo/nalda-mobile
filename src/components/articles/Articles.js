@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, Button } from 'react-native';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
@@ -57,14 +57,21 @@ class Articles extends Component {
         <View style={appStyles.container}>
           <Error error={this.state.error} />
 
-          <Text style={textStyles.title}>
-            Articles
+          <Text style={[textStyles.title, textStyles.gray]}>
+            Curator Articles
           </Text>
 
           <Previews
             content={this.state.articles}
             navigation={this.props.navigation}
             contentType="article"
+          />
+        </View>
+
+        <View style={appStyles.container}>
+          <Button
+            onPress={() => this.props.navigation.navigate('Home')}
+            title="Back to Home"
           />
         </View>
       </ScrollView>

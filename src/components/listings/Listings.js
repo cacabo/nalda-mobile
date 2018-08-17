@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, Button } from 'react-native';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
@@ -57,7 +57,7 @@ class Listings extends Component {
         <View style={appStyles.container}>
           <Error error={this.state.error} />
 
-          <Text style={textStyles.title}>
+          <Text style={[textStyles.title, textStyles.gray]}>
             Listings
           </Text>
 
@@ -65,6 +65,13 @@ class Listings extends Component {
             content={this.state.listings}
             navigation={this.props.navigation}
             contentType="listing"
+          />
+        </View>
+
+        <View style={appStyles.container}>
+          <Button
+            onPress={() => this.props.navigation.navigate('Home')}
+            title="Back to Home"
           />
         </View>
       </ScrollView>

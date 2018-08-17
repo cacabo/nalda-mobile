@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { black } from '../colors';
-import { large, small } from '../fontSizes';
+import { black, darkGray } from '../colors';
+import { large, medium, small } from '../fontSizes';
 
 export default StyleSheet.create({
   title: {
@@ -11,8 +11,9 @@ export default StyleSheet.create({
   },
   subtitle: {
     fontWeight: 'bold',
+    color: darkGray,
     marginBottom: 4,
-    fontSize: small,
+    fontSize: medium,
   },
   body: {
     fontWeight: 'normal',
@@ -21,7 +22,14 @@ export default StyleSheet.create({
   },
   quote: {
     fontWeight: 'normal',
-    marginBottom: 4,
+    fontStyle: 'italic',
+    color: darkGray,
     fontSize: small, // TODO
+  },
+  gray: {
+    color: darkGray,
+  },
+  black: {
+    color: black,
   },
 });

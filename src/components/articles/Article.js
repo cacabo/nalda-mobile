@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Image, ScrollView } from 'react-native';
+import { View, Button, Image, ScrollView } from 'react-native';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
 import { articlePath } from '../../api';
 
+import appStyles from '../../styles/app';
 import styles from '../../styles/articles/article';
 
 import Loading from '../shared/Loading';
@@ -63,6 +64,13 @@ class Article extends Component {
         />
 
         <Body components={this.state.article.body} />
+
+        <View style={appStyles.container}>
+          <Button
+            onPress={() => this.props.navigation.navigate('Articles')}
+            title="Back to all Articles"
+          />
+        </View>
       </ScrollView>
     );
   }

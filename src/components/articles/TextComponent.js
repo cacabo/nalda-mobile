@@ -1,11 +1,14 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 
 import textStyles from '../../styles/shared/text';
+import styles from '../../styles/articles/article';
 
 const TextComponent = ({ body }) => (
-  <Text style={textStyles.body}>{body}</Text>
+  <View style={styles.paragraphWrapper}>
+    <Text style={textStyles.body}>{body}</Text>
+  </View>
 );
 
 TextComponent.propTypes = {

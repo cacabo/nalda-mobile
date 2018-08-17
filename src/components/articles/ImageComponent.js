@@ -1,14 +1,16 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { View, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from '../../styles/articles/article';
 
 const ImageComponent = ({ body }) => (
-  <Image
-    style={styles.image}
-    source={{ uri: body }}
-  />
+  <View style={styles.imageWrapper}>
+    <Image
+      style={styles.image}
+      source={{ uri: body }}
+    />
+  </View>
 );
 
 ImageComponent.propTypes = {
