@@ -1,6 +1,10 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { TouchableHighlight, Text } from 'react-native';
+
+import styles from '../../styles/previews/preview';
 
 export default () => (
-  <Text>This is a video</Text>
+  <TouchableHighlight style={styles.previewWrapper}>
+    <Text>This is a video</Text>
+  </TouchableHighlight>
 );

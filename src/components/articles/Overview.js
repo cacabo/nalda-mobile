@@ -32,7 +32,7 @@ const Overview = ({
         {title}
       </Text>
 
-      <Text style={textStyles.subtitle}>
+      <Text style={[textStyles.subtitle, textStyles.padBottom]}>
         {subtitle}
       </Text>
 

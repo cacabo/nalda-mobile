@@ -15,6 +15,9 @@ export default StyleSheet.create({
     marginBottom: 4,
     fontSize: medium,
   },
+  padBottom: {
+    paddingBottom: 6,
+  },
   body: {
     fontWeight: 'normal',
     marginBottom: 4,
@@ -24,7 +27,7 @@ export default StyleSheet.create({
     fontWeight: 'normal',
     fontStyle: 'italic',
     color: darkGray,
-    fontSize: small, // TODO
+    fontSize: small,
   },
   gray: {
     color: darkGray,

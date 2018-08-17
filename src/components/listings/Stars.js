@@ -8,39 +8,31 @@ const empty = require('../../images/stars/empty.png');
 const half = require('../../images/stars/half.png');
 const full = require('../../images/stars/full.png');
 
-const Stars = ({ rating }) => {
+const Stars = ({ rating, small }) => {
   const numFull = parseInt(rating, 10);
   const numHalf = parseInt(rating + 0.5, 10) - numFull;
   const stars = [];
   let i;
 
+  const starStyles = small ? styles.smallStar : styles.star;
+
   for (i = 0; i < 5; i += 1) {
-    let image;
+    let source;
     if (i < numFull) {
-      image = (
-        <Image
-          source={full}
-          style={styles.star}
-          key={i}
-        />
-      );
+      source = full;
     } else if (i < numFull + numHalf) {
-      image = (
-        <Image
-          source={half}
-          style={styles.star}
-          key={i}
-        />
-      );
+      source = half;
     } else {
-      image = (
-        <Image
-          source={empty}
-          style={styles.star}
-          key={i}
-        />
-      );
+      source = empty;
     }
+
+    const image = (
+      <Image
+        source={source}
+        style={starStyles}
+        key={i}
+      />
+    );
 
     stars.push(image);
   }
@@ -52,8 +44,13 @@ const Stars = ({ rating }) => {
   );
 };
 
+Stars.defaultProps = {
+  small: false,
+};
+
 Stars.propTypes = {
   rating: PropTypes.number.isRequired,
+  small: PropTypes.bool,
 };
 
 export default Stars;

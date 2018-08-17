@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { darkGray } from '../colors';
-import { large, medium } from '../fontSizes';
+import { small, medium } from '../fontSizes';
 
 export default StyleSheet.create({
   preview: {
@@ -10,15 +10,27 @@ export default StyleSheet.create({
     marginBottom: 8,
     flex: 1,
     width: null,
-    height: 150,
+    height: 120,
   },
   title: {
     fontWeight: 'bold',
-    fontSize: large,
+    fontSize: medium,
     marginBottom: 8,
   },
   subtitle: {
     color: darkGray,
-    fontSize: medium,
+    fontSize: small,
+  },
+  previewsContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    display: 'flex',
+  },
+  previewWrapper: {
+    flex: 1,
+  },
+  spacer: {
+    width: 6,
+    height: 6,
   },
 });

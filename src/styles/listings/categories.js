@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { black, lightGray } from '../colors';
-import { small } from '../fontSizes';
+import { small, smallest } from '../fontSizes';
 
 export default StyleSheet.create({
   container: {
@@ -18,5 +18,14 @@ export default StyleSheet.create({
     marginBottom: 8,
     fontSize: small,
     color: black,
+  },
+  categorySmall: {
+    fontSize: smallest,
+    paddingTop: 3,
+    paddingBottom: 3,
+    paddingLeft: 6,
+    paddingRight: 6,
+    marginRight: 6,
+    marginBottom: 6,
   },
 });

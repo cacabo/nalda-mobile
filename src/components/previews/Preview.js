@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import PreviewListing from './PreviewListing';
 import PreviewArticle from './PreviewArticle';
 import PreviewVideo from './PreviewVideo';

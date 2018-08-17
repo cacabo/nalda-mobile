@@ -11,4 +11,9 @@ export default StyleSheet.create({
     height: 24,
     marginRight: 4,
   },
+  smallStar: {
+    width: 18,
+    height: 18,
+    marginRight: 4,
+  },
 });

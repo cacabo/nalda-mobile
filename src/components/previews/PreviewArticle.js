@@ -18,7 +18,7 @@ const PreviewArticle = ({
   const id = _id || contentId;
 
   return (
-    <TouchableHighlight onPress={() => navigation.navigate('Article', { id })}>
+    <TouchableHighlight onPress={() => navigation.navigate('Article', { id })} style={styles.previewWrapper}>
       <View style={styles.preview}>
         <Image
           source={{ uri: imagePreview || image }}
