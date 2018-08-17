@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text, TouchableHighlight } from 'react-native';
+import { View, Image, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from '../../styles/previews/preview';
@@ -18,7 +18,7 @@ const PreviewArticle = ({
   const id = _id || contentId;
 
   return (
-    <TouchableHighlight onPress={() => navigation.navigate('Article', { id })} style={styles.previewWrapper}>
+    <TouchableOpacity onPress={() => navigation.navigate('Article', { id })} style={styles.previewWrapper}>
       <View style={styles.preview}>
         <Image
           source={{ uri: imagePreview || image }}
@@ -32,7 +32,7 @@ const PreviewArticle = ({
           {subtitle}
         </Text>
       </View>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 };
 

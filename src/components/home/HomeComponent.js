@@ -1,7 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
+
 import styles from '../../styles/home/homeComponent';
+import textStyles from '../../styles/shared/text';
+
 import Previews from '../previews/Previews';
 
 const HomeComponent = ({ component, navigation }) => (
@@ -9,9 +12,11 @@ const HomeComponent = ({ component, navigation }) => (
     <Text style={styles.title}>
       { component.title }
     </Text>
-    <Text style={styles.subtitle}>
+
+    <Text style={[styles.subtitle, textStyles.gray]}>
       { component.subtitle }
     </Text>
+
     <Previews
       content={component.content}
       id={component._id}

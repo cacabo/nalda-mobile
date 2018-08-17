@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableHighlight, View, Image, Text } from 'react-native';
+import { TouchableOpacity, View, Image, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from '../../styles/previews/preview';
@@ -11,6 +11,7 @@ const PreviewListing = ({
   listing: {
     image,
     imagePreview,
+    location,
     title,
     rating,
     categories,
@@ -23,28 +24,41 @@ const PreviewListing = ({
   const id = _id || contentId;
 
   return (
-    <TouchableHighlight onPress={() => navigation.navigate('Listing', { id })} style={styles.previewWrapper}>
+    <TouchableOpacity onPress={() => navigation.navigate('Listing', { id })} style={styles.previewWrapper}>
       <View style={styles.preview}>
         <Image
           source={{ uri: imagePreview || image }}
           resizeMode="cover"
           style={styles.image}
         />
+
+        {location && location instanceof Object && location.name ? (
+          <Text style={styles.location} numberOfLines={1}>
+            {location.name}
+          </Text>
+        ) : null}
+
         <Text style={styles.title}>
           {title}
         </Text>
+
         <Stars rating={rating} small />
+
         <Categories categories={categories} small />
+
         <Text style={styles.subtitle}>
           {description}
         </Text>
       </View>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 };
 
 PreviewListing.propTypes = {
   listing: PropTypes.shape({
+    location: PropTypes.shape({
+      name: PropTypes.string,
+    }),
     image: PropTypes.string,
     imagePreview: PropTypes.string,
     title: PropTypes.string,

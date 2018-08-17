@@ -1,10 +1,17 @@
 import { StyleSheet } from 'react-native';
-import { darkGray } from '../colors';
-import { small, medium } from '../fontSizes';
+import { darkGray, darkishGray } from '../colors';
+import { small, medium, smallest } from '../fontSizes';
 
 export default StyleSheet.create({
   preview: {
     marginBottom: 24,
+  },
+  location: {
+    fontSize: smallest,
+    fontWeight: 'bold',
+    marginBottom: 6,
+    color: darkishGray,
+    flex: 1,
   },
   image: {
     marginBottom: 8,
