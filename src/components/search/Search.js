@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, View, TextInput } from 'react-native';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import { searchPath } from '../../api';
 
@@ -17,7 +18,7 @@ class Search extends Component {
 
     this.state = {
       loading: false,
-      text: 'Testing',
+      text: '',
       articles: [],
       listings: [],
       videos: [],
@@ -31,6 +32,7 @@ class Search extends Component {
   clearResults() {
     this.setState({
       loading: false,
+      text: '',
       articles: [],
       listings: [],
       videos: [],
@@ -41,18 +43,19 @@ class Search extends Component {
   handleChange(text) {
     this.setState({
       text,
+      loading: true,
     });
 
-    if (text) {
+    if (text && text.length) {
       axios.post(searchPath, { search: this.state.text })
         .then((res) => {
           if (res.data.success) {
             this.setState({
               loading: false,
-              articles: res.data.articles,
-              listings: res.data.listings,
-              videos: res.data.videos,
-              curators: res.data.curators,
+              articles: res.data.data.articles || [],
+              listings: res.data.data.listings || [],
+              videos: res.data.data.videos || [],
+              curators: res.data.data.curators || [],
             });
           } else {
             this.setState({
@@ -91,6 +94,7 @@ class Search extends Component {
               curators={this.state.curators}
               videos={this.state.videos}
               listings={this.state.listings}
+              navigation={this.props.navigation}
             />
           )}
         </View>
@@ -98,5 +102,9 @@ class Search extends Component {
     );
   }
 }
+
+Search.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
 
 export default Search;
