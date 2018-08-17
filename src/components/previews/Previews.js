@@ -41,14 +41,14 @@ const Previews = ({
 Previews.defaultProps = {
   content: [],
   id: '',
-  contentType: null,
+  contentType: undefined,
 };
 
 Previews.propTypes = {
   id: PropTypes.string,
   content: PropTypes.array,
   navigation: PropTypes.object.isRequired,
-  contentType: PropTypes.oneOf(['listing', 'video', 'article']),
+  contentType: PropTypes.oneOf(['listing', 'video', 'article', 'curator']),
 };
 
 export default Previews;

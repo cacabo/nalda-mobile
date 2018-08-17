@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { black, gray } from '../colors';
+import { black, gray, lightGray } from '../colors';
 
 export default StyleSheet.create({
   input: {
@@ -14,6 +14,12 @@ export default StyleSheet.create({
     borderWidth: 2,
     borderRadius: 4,
     padding: 8,
-    marginBottom: 8,
+  },
+  searchWrapper: {
+    borderBottomWidth: 1,
+    borderBottomColor: lightGray,
+    paddingTop: 4,
+    paddingBottom: 4,
+    marginBottom: 4,
   },
 });

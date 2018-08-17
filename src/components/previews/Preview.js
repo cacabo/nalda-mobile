@@ -7,6 +7,9 @@ import PreviewVideo from './PreviewVideo';
 
 const Preview = ({ content, contentType, navigation }) => {
   const type = contentType || content.contentType;
+
+  if (!type) return null;
+
   if (type === 'listing' || type === 'Listings') {
     return (
       <PreviewListing
@@ -21,13 +24,18 @@ const Preview = ({ content, contentType, navigation }) => {
         navigation={navigation}
       />
     );
+  } else if (type === 'video' || type === 'Videos') {
+    return (
+      <PreviewVideo
+        video={content}
+        navigation={navigation}
+      />
+    );
   }
-  return (
-    <PreviewVideo
-      video={content}
-      navigation={navigation}
-    />
-  );
+
+  // TODO curators
+
+  return null;
 };
 
 Preview.defaultProps = {

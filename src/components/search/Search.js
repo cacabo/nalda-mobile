@@ -77,13 +77,17 @@ class Search extends Component {
   render() {
     return (
       <ScrollView>
-        <View style={appStyles.container}>
-          <TextInput
-            style={styles.input}
-            value={this.state.text}
-            onChangeText={this.handleChange}
-          />
+        <View stype={styles.searchWrapper}>
+          <View style={appStyles.container}>
+            <TextInput
+              style={styles.input}
+              value={this.state.text}
+              onChangeText={this.handleChange}
+            />
+          </View>
+        </View>
 
+        <View style={appStyles.container}>
           <Error error={this.state.error} />
 
           {this.state.loading ? (
