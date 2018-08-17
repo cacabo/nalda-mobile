@@ -11,3 +11,4 @@ export const listingsPath = getURL('listings');
 export const categoryPath = category => getURL(`listings/categories/${category}`);
 export const articlesPath = getURL('articles');
 export const articlePath = id => getURL(`articles/${id}`);
+export const searchpath = getURL('search');

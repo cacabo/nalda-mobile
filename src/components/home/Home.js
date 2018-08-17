@@ -76,6 +76,10 @@ class Home extends Component {
             onPress={() => this.props.navigation.navigate('Articles')}
             title="View all Articles"
           />
+          <Button
+            onPress={() => this.props.navigation.navigate('Search')}
+            title="Search"
+          />
         </View>
 
         <Banner
