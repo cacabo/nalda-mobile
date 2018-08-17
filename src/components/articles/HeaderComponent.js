@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import textStyles from '../../styles/shared/text';
 
 const HeaderComponent = ({ body }) => (
-  <Text styles={textStyles.title}>{body}</Text>
+  <Text style={textStyles.title}>{body}</Text>
 );
 
 HeaderComponent.propTypes = {

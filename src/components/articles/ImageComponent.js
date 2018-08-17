@@ -6,7 +6,7 @@ import styles from '../../styles/articles/article';
 
 const ImageComponent = ({ body }) => (
   <Image
-    styles={styles.image}
+    style={styles.image}
     source={{ uri: body }}
   />
 );

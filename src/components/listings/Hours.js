@@ -85,7 +85,7 @@ class Hours extends Component {
 
     return (
       // If a date has a start and end time, it will be displayed
-      <View styles={styles.table}>
+      <View style={styles.table}>
         {days.map(this.renderDay)}
       </View>
     );

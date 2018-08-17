@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import textStyles from '../../styles/shared/text';
 
 const TextComponent = ({ body }) => (
-  <Text styles={textStyles.quote}>{body}</Text>
+  <Text style={textStyles.quote}>{body}</Text>
 );
 
 TextComponent.propTypes = {

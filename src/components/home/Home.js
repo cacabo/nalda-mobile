@@ -59,8 +59,23 @@ class Home extends Component {
 
     return (
       <ScrollView>
+        {
+          this.state.error && (
+            <View style={styles.container}>
+              <Error error={this.state.error} />
+            </View>
+          )
+        }
+
         <View style={styles.container}>
-          <Error error={this.state.error} />
+          <Button
+            onPress={() => this.props.navigation.navigate('Listings')}
+            title="View all Listings"
+          />
+          <Button
+            onPress={() => this.props.navigation.navigate('Articles')}
+            title="View all Articles"
+          />
         </View>
 
         <Banner
@@ -73,17 +88,6 @@ class Home extends Component {
           <HomeComponents
             components={this.state.components}
             navigation={this.props.navigation}
-          />
-        </View>
-
-        <View style={styles.container}>
-          <Button
-            onPress={() => this.props.navigation.navigate('Listings')}
-            title="View all Listings"
-          />
-          <Button
-            onPress={() => this.props.navigation.navigate('Articles')}
-            title="View all Articles"
           />
         </View>
       </ScrollView>

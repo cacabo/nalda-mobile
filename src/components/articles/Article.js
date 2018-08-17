@@ -9,6 +9,7 @@ import styles from '../../styles/articles/article';
 
 import Loading from '../shared/Loading';
 import Overview from './Overview';
+import Body from './Body';
 
 class Article extends Component {
   constructor(props) {
@@ -60,6 +61,8 @@ class Article extends Component {
           style={styles.image}
           source={{ uri: this.state.article.image }}
         />
+
+        <Body components={this.state.article.body} />
       </ScrollView>
     );
   }
